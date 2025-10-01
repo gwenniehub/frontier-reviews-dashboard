@@ -14,7 +14,8 @@
  
 ## 2. Dataset
 2.1. Data Model (Star Schema)
-** Dimension Tables **
+
+- Dimension Tables
 
 | Table              | Purpose                                                   |
 |:-------------------|:----------------------------------------------------------|
@@ -24,6 +25,5 @@
 | `dim_date`         | Calendar table for submission & flight dates              |
 
 
-* Fact Table
-  Each row in the fct_review_ table represents a unique review event containing metrics tied to a specific customer’s flight experience
+- Fact Table
 `fct_review_enriched` One row per review per flight with quantitative metrics
