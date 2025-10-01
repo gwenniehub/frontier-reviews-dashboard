@@ -26,4 +26,4 @@
 
 
 - Fact Table
-+ `fct_review_enriched` One row per review per flight with quantitative metrics
+  + `fct_review_enriched` One row per review per flight with quantitative metrics
