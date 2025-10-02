@@ -2,11 +2,6 @@
 ## 1. Overview 
 - Scope: 3,000 Frontier Airlines reviews from 2015 to 2025, sourced from [AirlineQuality.com](https://www.airlinequality.com/airline-reviews/%7Bairline%E2%80%91slug%7D/) (Skytrax), covering multiple airlines.
 - Goal: Identify what drives Frontier’s customer satisfaction and turn those insights into actionable improvements, benchmarked against other ULCCs for context.
-- Key Insights:
-  + Frontier’s overall sentiment is relatively weak: the average rating sits low, and the proportion of reviewers who would recommend the airline signals ample room for improvement.
-  + In Economy, satisfaction is most strongly tied to Food & Beverages and Cabin Staff Service — passengers consistently cite those as differentiators.
-  + In Non-Economy, Seat Comfort and Food & Beverages stand out: negative feedback in these areas correlates strongly with overall dissatisfaction.
-  + When compared with other ULCCs, Frontier shows particular underperformance in the recommendation rate.
 
 The dashboard can be accessed [here](https://github.com/gwenniehub/frontier-reviews-dashboard/blob/763b3ec97a55d5615f44b5d3a23badb80776a993/Frontier%20Dashboard.pdf).
 
@@ -55,5 +50,21 @@ The dashboard can be accessed [here](https://github.com/gwenniehub/frontier-revi
 **3.2.5 Version Control & Documentation (GitHub)**
 - Documented SQL scripts, Python notebooks, schema diagrams, and dashboard outputs in GitHub
 - Used GitHub for version control, collaboration, and project presentation
+
+## 4. Key Insights
+- Frontier’s overall sentiment is relatively weak: the average rating is low, and the proportion of reviewers who would recommend the airline signals improvement regarding customer service.
+- In Economy, satisfaction is most strongly tied to Food & Beverages and Cabin Staff Service, passengers consistently cite those as differentiators.
+- In Non-Economy, Seat Comfort and Food & Beverages stand out: negative feedback in these areas correlates strongly with overall dissatisfaction.
+- When compared with other ULCCs, Frontier shows particular underperformance in the recommendation rate.
+
+## 5. Recommendations
+
+**5.1 Seat Type** 
+<img width="755" height="574" alt="Screenshot 2025-10-02 at 21 47 55" src="https://github.com/user-attachments/assets/5eec8f28-5221-4e3e-a61d-6f5d73957fdc" /> 
+
+- Prioritize service enhancements in Economy Class, especially around Entertainment and Seat Comfort, since this class represents the majority of reviews and customer base
+
+- Reevaluate investment in First Class, as demand is low compared to other segments, suggesting opportunities to optimize costs or reallocate resources
+
 
 
