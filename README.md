@@ -68,12 +68,14 @@ The dashboard can be accessed [here](https://github.com/gwenniehub/frontier-revi
 
 
 **5.2 Aircraft Model**
+
 <img width="989" height="745" alt="Screenshot 2025-10-03 at 15 31 16" src="https://github.com/user-attachments/assets/f84d53da-1acb-45ac-a9f1-2164068e8f83" />
 
 - Low sample size limits the reliability of review accuracy
 - Aircraft type shows minimal impact on customer satisfaction; focus should shift to other service dimensions
 
 **5.3 Comparisons among ULCCs**
+
 <img width="984" height="388" alt="Screenshot 2025-10-03 at 15 36 14" src="https://github.com/user-attachments/assets/5233474c-90cb-4e4b-8574-b276550c6834" />
 
 - Airlines in the same price range deliver higher customer satisfaction, giving them a competitive advantage, while many Frontier customers feel the value does not match the price paid
