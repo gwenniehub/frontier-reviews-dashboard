@@ -60,6 +60,7 @@ The dashboard can be accessed [here](https://github.com/gwenniehub/frontier-revi
 ## 5. Recommendations
 
 **5.1 Seat Type** 
+
 <img width="755" height="574" alt="Screenshot 2025-10-02 at 21 47 55" src="https://github.com/user-attachments/assets/5eec8f28-5221-4e3e-a61d-6f5d73957fdc" /> 
 
 - Prioritize service enhancements in Economy Class, especially around Entertainment and Seat Comfort, since this class represents the majority of reviews and customer base
