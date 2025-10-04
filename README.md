@@ -1,11 +1,11 @@
-<img width="832" height="298" alt="Screenshot 2025-10-04 at 12 35 28" src="https://github.com/user-attachments/assets/a6fbbeae-a4f6-4a18-b158-3d5f8c6ee728" /># Frontier Airlines Analysis 
+# Frontier Airlines Analysis 
 ## 1. Overview 
 - Scope: 3,000 Frontier Airlines reviews from 2015 to 2025, sourced from [AirlineQuality.com](https://www.airlinequality.com/airline-reviews/%7Bairline%E2%80%91slug%7D/) (Skytrax), covering multiple airlines.
 - Goal: Identify what drives Frontier’s customer satisfaction and turn those insights into actionable improvements, benchmarked against other ULCCs for context.
 
 The dashboard can be accessed [here](https://github.com/gwenniehub/frontier-reviews-dashboard/blob/763b3ec97a55d5615f44b5d3a23badb80776a993/Frontier%20Dashboard.pdf).
 
-## 2. Team Structure and Pipeline Description 
+## 2. Team and Pipeline Overview
 This project was developed through close collaboration among a diverse data team, each member contributing a specialized role within the end-to-end analytics pipeline. The data engineering team designed and maintained the extraction layer, automating the collection of Skytrax reviews through web scraping pipelines and ensuring the data was properly staged in cloud storage. The data modeling team took responsibility for transforming raw data into structured, reliable models using dbt, implementing data quality checks and schema validation to support analysis at scale.
 
 The data analytics team built upon these models to conduct exploratory and statistical analysis, transforming complex datasets into actionable insights that reveal airline performance patterns and customer experience trends. Complementing this, the visualization and dashboard team focused on presenting these insights through an interactive front-end interface, enabling users to navigate key metrics and uncover service quality indicators.
