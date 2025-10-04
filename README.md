@@ -32,7 +32,7 @@ The extraction layer automates the process of collecting, cleaning, and staging 
 2. **Cleaning:** Standardizes date formats, handles nulls, and enforces consistent schema and data types using Python scripts.  
 3. **Staging:** Uploads cleaned data to AWS S3 with IAM-based access control, encryption, and versioning.  
 4. **Loading to Warehouse:** Copies cleaned datasets from S3 to Snowflake using the `snowflake_copy_from_s3` operator.  
-5. **Task Orchestration:** Airflow DAG manages dependencies in this order —  
+5. **Task Orchestration:** Airflow DAG manages dependencies in this order 
    `scrape_skytrax_data → clean_data → upload_cleaned_data_to_s3 → snowflake_copy_from_s3`.
 
 
