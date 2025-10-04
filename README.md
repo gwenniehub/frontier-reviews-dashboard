@@ -5,7 +5,9 @@
 - Goal: Identify what drives Frontier’s customer satisfaction and turn those insights into actionable improvements, benchmarked against other ULCCs for context.
 
 The dashboard can be accessed [here](https://github.com/gwenniehub/frontier-reviews-dashboard/blob/763b3ec97a55d5615f44b5d3a23badb80776a993/Frontier%20Dashboard.pdf).
+
 ---
+
 ## 2. Team and Pipeline Overview
 This project was developed through close collaboration among a diverse data team, each member contributing a specialized role within the end-to-end analytics pipeline. The data engineering team designed and maintained the extraction layer, automating the collection of Skytrax reviews through web scraping pipelines and ensuring the data was properly staged in cloud storage. The data modeling team took responsibility for transforming raw data into structured, reliable models using dbt, implementing data quality checks and schema validation to support analysis at scale.
 
@@ -37,8 +39,7 @@ The extraction layer automates the process of collecting, cleaning, and staging 
 4. **Loading to Warehouse:** Copies cleaned datasets from S3 to Snowflake using the `snowflake_copy_from_s3` operator.  
 5. **Task Orchestration:** Airflow DAG manages dependencies in this order 
    `scrape_skytrax_data → clean_data → upload_cleaned_data_to_s3 → snowflake_copy_from_s3`.
-   
----
+
 
 ### 3.2. Data Cleaning Layer
 
