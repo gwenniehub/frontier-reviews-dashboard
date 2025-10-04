@@ -57,7 +57,7 @@ This layer transforms cleaned data into structured models to support analytics a
 
 **Stack:** dbt (Core), Snowflake, Airflow, GitHub Actions  
 
-**3.3.1. Data model**
+**Data model**
 
 <img width="608" height="411" alt="Screenshot 2025-10-02 at 21 21 26" src="https://github.com/user-attachments/assets/2914db60-a8f4-467d-8270-9499244aaaf9" />
     
@@ -72,12 +72,13 @@ This layer transforms cleaned data into structured models to support analytics a
 
 - Fact Table
   + `fct_review_enriched` One row per review per flight with quantitative metrics
+Incremental dbt jobs maintain data freshness and minimize warehouse cost 
   
-**3.3.2. Data Framework:**  
-- Incremental dbt jobs maintain data freshness and minimize warehouse cost  
-- Schema, relationship, and business-logic tests (e.g., ratings within 0–10)  
-- Freshness and completeness validations  
-- CI/CD triggers on code pushes, PRs, weekly runs, and manual executions 
+**Data Quality Framework:**  
+- Schema and relationship tests
+- Custom business-logic assertions (e.g., ratings within 0–10)
+- Freshness/completeness checks.
+CI/CD triggers on code pushes, PRs, weekly runs, and manual executions 
 
 ## 4. Frontier Airlines Analysis & Visualization
 ### **4.1. Stack**
