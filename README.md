@@ -35,10 +35,31 @@ The extraction layer automates the process of collecting, cleaning, and staging 
 5. **Task Orchestration:** Airflow DAG manages dependencies in this order 
    `scrape_skytrax_data → clean_data → upload_cleaned_data_to_s3 → snowflake_copy_from_s3`.
 
+### **3.2. Data Cleaning Layer **
 
+This layer refines raw review data to ensure consistency and readiness for transformation.  
 
+**Stack:** Python 3.12.5, Pandas, NumPy, Matplotlib, Seaborn  
 
-## 2. Dataset
+**Key Steps:**  
+- Column standardization - snake_case, special-character cleanup
+- Date formatting - ISO 8601 for submission and flight dates
+- Text cleaning - verification flag extraction, nationality normalization
+- Route parsing - origin, destination, and connections
+- Aircraft standardization - unified Airbus/Boeing naming
+- Rating conversion - numeric Int64 fields for analysis
+
+Cleaned outputs feed directly into Snowflake for transformation.
+
+### **3.3. Transformation Layer**
+
+This layer transforms cleaned data into structured models to support analytics and reporting.  
+
+**Stack:** dbt (Core), Snowflake, Airflow, GitHub Actions  
+
+**3.3.1. Data model**
+    <img width="608" height="411" alt="Screenshot 2025-10-02 at 21 21 26" src="https://github.com/user-attachments/assets/2914db60-a8f4-467d-8270-9499244aaaf9" />
+    
 - Dimension Tables
 
 | Table              | Purpose                                                   |
@@ -48,51 +69,54 @@ The extraction layer automates the process of collecting, cleaning, and staging 
 | `dim_location`     | Airport/city keys for origin, destination, transit        |
 | `dim_date`         | Calendar table for submission & flight dates              |
 
-
 - Fact Table
   + `fct_review_enriched` One row per review per flight with quantitative metrics
   
-      <img width="608" height="411" alt="Screenshot 2025-10-02 at 21 21 26" src="https://github.com/user-attachments/assets/2914db60-a8f4-467d-8270-9499244aaaf9" />
+**3.3.2. Data Framework:**  
+- Incremental dbt jobs maintain data freshness and minimize warehouse cost  
+- Schema, relationship, and business-logic tests (e.g., ratings within 0–10)  
+- Freshness and completeness validations  
+- CI/CD triggers on code pushes, PRs, weekly runs, and manual executions 
 
-## 3. Tech Stack and Workflow
-**3.1 Technology Stack**
+## 4. Frontier Airlines Analysis & Visualization
+### **4.1 Technology Stack**
 - SQL (Snowflake): Data cleaning, preparation, and exploratory analysis
 - Python (Matplotlib, Seaborn): Visualizations (e.g., heatmaps) and exploratory analysis
 - Mode Analytics: SQL/Python integration and interactive dashboards
 - GitHub: Version control and documentation
 
-**3.2 Workflow**
+### **4.2 Workflow**
 
-**3.2.1. Data Extraction (Snowflake)**
+**4.2.1. Data Extraction (Snowflake)**
 - Queried 121K+ Skytrax airline reviews stored in Snowflake
 - Filtered 3K+ Frontier Airlines records
 - Applied SQL joins, CTEs, and window functions to clean, normalize, and prepare structured datasets
   
-**3.2.2. Integration (Mode Analytics)**
+**4.2.2. Integration (Mode Analytics)**
 - Connected Snowflake directly to Mode Analytics for real-time querying
 - Combined SQL and Python within Mode for exploratory data analysis (EDA)
 
-**3.2.3. Exploratory Data Analysis (EDA)**
+**4.2.3. Exploratory Data Analysis (EDA)**
 - Used SQL to identify key service metrics (seat comfort, cabin staff, food, Wi-Fi)
 - Applied Python (Matplotlib, Seaborn) to generate trend visualizations, including heatmaps for satisfaction drivers
 
-**3.2.4. Visualization & Insights**
+**4.2.4. Visualization & Insights**
 - Built interactive dashboards in Mode Analytics to highlight customer pain points and route-based performance differences
 - Designed visuals for comparative analysis across service categories
 
-**3.2.5 Version Control & Documentation (GitHub)**
+**4.2.5 Version Control & Documentation (GitHub)**
 - Documented SQL scripts, Python notebooks, schema diagrams, and dashboard outputs in GitHub
 - Used GitHub for version control, collaboration, and project presentation
 
-## 4. Key Insights
+## 5. Key Insights
 - Frontier’s overall sentiment is relatively weak: the average rating is low, and the proportion of reviewers who would recommend the airline signals improvement regarding customer service.
 - In Economy, satisfaction is most strongly tied to Food & Beverages and Cabin Staff Service, passengers consistently cite those as differentiators.
 - In Non-Economy, Seat Comfort and Food & Beverages stand out: negative feedback in these areas correlates strongly with overall dissatisfaction.
 - When compared with other ULCCs, Frontier shows particular underperformance in the recommendation rate.
 
-## 5. Recommendations
+## 6. Recommendations
 
-**5.1 Seat Type** 
+### **6.1 Seat Type** 
 
 <img width="755" height="574" alt="Screenshot 2025-10-02 at 21 47 55" src="https://github.com/user-attachments/assets/5eec8f28-5221-4e3e-a61d-6f5d73957fdc" /> 
 
@@ -100,20 +124,20 @@ The extraction layer automates the process of collecting, cleaning, and staging 
 - Reevaluate investment in First Class, as demand is low compared to other segments, suggesting opportunities to optimize costs or reallocate resources
 
 
-**5.2 Aircraft Model**
+### **6.2 Aircraft Model**
 
 <img width="989" height="745" alt="Screenshot 2025-10-03 at 15 31 16" src="https://github.com/user-attachments/assets/f84d53da-1acb-45ac-a9f1-2164068e8f83" />
 
 - Low sample size limits the reliability of review accuracy
 - Aircraft type shows minimal impact on customer satisfaction; focus should shift to other service dimensions
 
-**5.3 Comparisons among ULCCs**
+### **6.3 Comparisons among ULCCs**
 
 <img width="984" height="388" alt="Screenshot 2025-10-03 at 15 36 14" src="https://github.com/user-attachments/assets/5233474c-90cb-4e4b-8574-b276550c6834" />
 
 - Airlines in the same price range deliver higher customer satisfaction, giving them a competitive advantage, while many Frontier customers feel the value does not match the price paid
 - Frontier should prioritize improving key service metrics to enhance perceived value and close this competitive gap
 
-## 6. Reflections 
+## 7. Reflections 
 
 
