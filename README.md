@@ -1,10 +1,11 @@
 # Frontier Airlines Analysis 
+---
 ## 1. Overview 
 - Scope: 3,000 Frontier Airlines reviews from 2015 to 2025, sourced from [AirlineQuality.com](https://www.airlinequality.com/airline-reviews/%7Bairline%E2%80%91slug%7D/) (Skytrax), covering multiple airlines.
 - Goal: Identify what drives Frontier’s customer satisfaction and turn those insights into actionable improvements, benchmarked against other ULCCs for context.
 
 The dashboard can be accessed [here](https://github.com/gwenniehub/frontier-reviews-dashboard/blob/763b3ec97a55d5615f44b5d3a23badb80776a993/Frontier%20Dashboard.pdf).
-
+---
 ## 2. Team and Pipeline Overview
 This project was developed through close collaboration among a diverse data team, each member contributing a specialized role within the end-to-end analytics pipeline. The data engineering team designed and maintained the extraction layer, automating the collection of Skytrax reviews through web scraping pipelines and ensuring the data was properly staged in cloud storage. The data modeling team took responsibility for transforming raw data into structured, reliable models using dbt, implementing data quality checks and schema validation to support analysis at scale.
 
@@ -13,6 +14,8 @@ The data analytics team built upon these models to conduct exploratory and stati
 I contributed as part of the data analytics team, focusing on exploratory data analysis, querying transformed datasets, and generating insights that supported visualization and strategic recommendations. This collaborative workflow reflects a real-world data environment—where engineers, modelers, analysts, and visualization specialists work together seamlessly to deliver a cohesive, insight-driven analysis.
 
 For a comprehensive explanation of the ELT pipeline and its workflow, refer to this repo [skytrax_reviews](https://github.com/MarkPhamm/skytrax_reviews.git)
+
+---
 
 ## 3. Architect Overview 
   <img width="827" height="288" alt="Screenshot 2025-10-04 at 12 35 45" src="https://github.com/user-attachments/assets/940c8d58-fd6f-41d1-87e2-f03110eb8113" />
@@ -34,6 +37,8 @@ The extraction layer automates the process of collecting, cleaning, and staging 
 4. **Loading to Warehouse:** Copies cleaned datasets from S3 to Snowflake using the `snowflake_copy_from_s3` operator.  
 5. **Task Orchestration:** Airflow DAG manages dependencies in this order 
    `scrape_skytrax_data → clean_data → upload_cleaned_data_to_s3 → snowflake_copy_from_s3`.
+   
+---
 
 ### 3.2. Data Cleaning Layer
 
@@ -78,7 +83,9 @@ Incremental dbt jobs maintain data freshness and minimize warehouse cost
 - Schema and relationship tests
 - Custom business-logic assertions (e.g., ratings within 0–10)
 - Freshness/completeness checks.
-CI/CD triggers on code pushes, PRs, weekly runs, and manual executions 
+CI/CD triggers on code pushes, PRs, weekly runs, and manual executions
+
+---
 
 ## 4. Frontier Airlines Analysis & Visualization
 ### **4.1. Stack**
@@ -110,11 +117,15 @@ CI/CD triggers on code pushes, PRs, weekly runs, and manual executions
 - Documented SQL scripts, Python notebooks, schema diagrams, and dashboard outputs in GitHub
 - Used GitHub for version control, collaboration, and project presentation
 
+---
+
 ## 5. Key Insights
 - Frontier’s overall sentiment is relatively weak: the average rating is low, and the proportion of reviewers who would recommend the airline signals improvement regarding customer service.
 - In Economy, satisfaction is most strongly tied to Food & Beverages and Cabin Staff Service, passengers consistently cite those as differentiators.
 - In Non-Economy, Seat Comfort and Food & Beverages stand out: negative feedback in these areas correlates strongly with overall dissatisfaction.
 - When compared with other ULCCs, Frontier shows particular underperformance in the recommendation rate.
+
+---
 
 ## 6. Recommendations
 
@@ -139,6 +150,8 @@ CI/CD triggers on code pushes, PRs, weekly runs, and manual executions
 
 - Airlines in the same price range deliver higher customer satisfaction, giving them a competitive advantage, while many Frontier customers feel the value does not match the price paid
 - Frontier should prioritize improving key service metrics to enhance perceived value and close this competitive gap
+
+--- 
 
 ## 7. Reflections 
 
