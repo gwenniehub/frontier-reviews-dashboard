@@ -1,9 +1,42 @@
-# Frontier Airlines Analysis 
+<img width="832" height="298" alt="Screenshot 2025-10-04 at 12 35 28" src="https://github.com/user-attachments/assets/a6fbbeae-a4f6-4a18-b158-3d5f8c6ee728" /># Frontier Airlines Analysis 
 ## 1. Overview 
 - Scope: 3,000 Frontier Airlines reviews from 2015 to 2025, sourced from [AirlineQuality.com](https://www.airlinequality.com/airline-reviews/%7Bairline%E2%80%91slug%7D/) (Skytrax), covering multiple airlines.
 - Goal: Identify what drives Frontier’s customer satisfaction and turn those insights into actionable improvements, benchmarked against other ULCCs for context.
 
 The dashboard can be accessed [here](https://github.com/gwenniehub/frontier-reviews-dashboard/blob/763b3ec97a55d5615f44b5d3a23badb80776a993/Frontier%20Dashboard.pdf).
+
+## 2. Team Structure and Pipeline Description 
+This project was developed through close collaboration among a diverse data team, each member contributing a specialized role within the end-to-end analytics pipeline. The data engineering team designed and maintained the extraction layer, automating the collection of Skytrax reviews through web scraping pipelines and ensuring the data was properly staged in cloud storage. The data modeling team took responsibility for transforming raw data into structured, reliable models using dbt, implementing data quality checks and schema validation to support analysis at scale.
+
+The data analytics team built upon these models to conduct exploratory and statistical analysis, transforming complex datasets into actionable insights that reveal airline performance patterns and customer experience trends. Complementing this, the visualization and dashboard team focused on presenting these insights through an interactive front-end interface, enabling users to navigate key metrics and uncover service quality indicators.
+
+I contributed as part of the data analytics team, focusing on exploratory data analysis, querying transformed datasets, and generating insights that supported visualization and strategic recommendations. This collaborative workflow reflects a real-world data environment—where engineers, modelers, analysts, and visualization specialists work together seamlessly to deliver a cohesive, insight-driven analysis.
+
+For a comprehensive explanation of the ELT pipeline and its workflow, refer to the full documentation [here](https://github.com/MarkPhamm/skytrax_reviews.git)
+
+## 3. Architect Overview 
+  <img width="827" height="288" alt="Screenshot 2025-10-04 at 12 35 45" src="https://github.com/user-attachments/assets/940c8d58-fd6f-41d1-87e2-f03110eb8113" />
+
+### **3.1. Extraction Layer**
+The extraction layer automates the process of collecting, cleaning, and staging Skytrax review data for analysis. It integrates multiple technologies to ensure data reliability, scalability, and security.  
+
+**Key Technologies:**  
+- **Python & Pandas** – for web scraping, parsing, and initial data handling  
+- **Apache Airflow** – to orchestrate and schedule ETL tasks  
+- **AWS S3** – for cloud-based data storage and versioning  
+- **Docker** – to containerize and deploy workflows consistently  
+- **Snowflake** – as the data warehouse for downstream transformation  
+
+**Workflow Summary:**  
+1. **Scraping:** Iterates through the Skytrax airline index, retrieves paginated review pages, and extracts structured fields (ratings, comments, flight details, passenger metadata, and category-specific scores).  
+2. **Cleaning:** Standardizes date formats, handles nulls, and enforces consistent schema and data types using Python scripts.  
+3. **Staging:** Uploads cleaned data to AWS S3 with IAM-based access control, encryption, and versioning.  
+4. **Loading to Warehouse:** Copies cleaned datasets from S3 to Snowflake using the `snowflake_copy_from_s3` operator.  
+5. **Task Orchestration:** Airflow DAG manages dependencies in this order —  
+   `scrape_skytrax_data → clean_data → upload_cleaned_data_to_s3 → snowflake_copy_from_s3`.
+
+
+
 
 ## 2. Dataset
 - Dimension Tables
@@ -81,5 +114,6 @@ The dashboard can be accessed [here](https://github.com/gwenniehub/frontier-revi
 - Airlines in the same price range deliver higher customer satisfaction, giving them a competitive advantage, while many Frontier customers feel the value does not match the price paid
 - Frontier should prioritize improving key service metrics to enhance perceived value and close this competitive gap
 
+## 6. Reflections 
 
 
