@@ -35,7 +35,7 @@ The extraction layer automates the process of collecting, cleaning, and staging 
 5. **Task Orchestration:** Airflow DAG manages dependencies in this order 
    `scrape_skytrax_data → clean_data → upload_cleaned_data_to_s3 → snowflake_copy_from_s3`.
 
-### **3.2. Data Cleaning Layer **
+### 3.2. Data Cleaning Layer
 
 This layer refines raw review data to ensure consistency and readiness for transformation.  
 
@@ -79,13 +79,13 @@ This layer transforms cleaned data into structured models to support analytics a
 - CI/CD triggers on code pushes, PRs, weekly runs, and manual executions 
 
 ## 4. Frontier Airlines Analysis & Visualization
-### **4.1 Technology Stack**
+### **4.1. Stack**
 - SQL (Snowflake): Data cleaning, preparation, and exploratory analysis
 - Python (Matplotlib, Seaborn): Visualizations (e.g., heatmaps) and exploratory analysis
 - Mode Analytics: SQL/Python integration and interactive dashboards
 - GitHub: Version control and documentation
 
-### **4.2 Workflow**
+### **4.2. Workflow**
 
 **4.2.1. Data Extraction (Snowflake)**
 - Queried 121K+ Skytrax airline reviews stored in Snowflake
