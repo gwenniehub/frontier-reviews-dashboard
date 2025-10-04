@@ -12,7 +12,7 @@ The data analytics team built upon these models to conduct exploratory and stati
 
 I contributed as part of the data analytics team, focusing on exploratory data analysis, querying transformed datasets, and generating insights that supported visualization and strategic recommendations. This collaborative workflow reflects a real-world data environment—where engineers, modelers, analysts, and visualization specialists work together seamlessly to deliver a cohesive, insight-driven analysis.
 
-For a comprehensive explanation of the ELT pipeline and its workflow, refer to the full documentation [here](https://github.com/MarkPhamm/skytrax_reviews.git)
+For a comprehensive explanation of the ELT pipeline and its workflow, refer to this repo [skytrax_reviews](https://github.com/MarkPhamm/skytrax_reviews.git)
 
 ## 3. Architect Overview 
   <img width="827" height="288" alt="Screenshot 2025-10-04 at 12 35 45" src="https://github.com/user-attachments/assets/940c8d58-fd6f-41d1-87e2-f03110eb8113" />
@@ -58,7 +58,8 @@ This layer transforms cleaned data into structured models to support analytics a
 **Stack:** dbt (Core), Snowflake, Airflow, GitHub Actions  
 
 **3.3.1. Data model**
-    <img width="608" height="411" alt="Screenshot 2025-10-02 at 21 21 26" src="https://github.com/user-attachments/assets/2914db60-a8f4-467d-8270-9499244aaaf9" />
+
+<img width="608" height="411" alt="Screenshot 2025-10-02 at 21 21 26" src="https://github.com/user-attachments/assets/2914db60-a8f4-467d-8270-9499244aaaf9" />
     
 - Dimension Tables
 
