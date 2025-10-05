@@ -3,8 +3,9 @@
 
 Frontier Airlines is a Denver-based ultra-low-cost carrier founded in 1994, serving more than 100 destinations across the United States and select international markets. Its model emphasizes affordable fares and point-to-point routes, making customer experience and operational reliability essential to differentiation.
 
-This project is a full, end-to-end analysis that gathers public customer reviews, standardizes the data, and presents the findings in an interactive report. The goal is to clarify how travelers experience Frontier and where improvements would create the most value. Key questions include: Where are Frontier’s strengths and pain points across routes and aircraft? How do patterns compare with similar airlines? Which issues represent quick wins versus longer-term initiatives, and how should resources be prioritized?
+This project is a full, end-to-end analysis that gathers public customer reviews, standardizes the data, and presents the findings in an interactive report. The goal is to clarify how travelers experience Frontier and where improvements would create the most value. 
 
+Key questions include: Where are Frontier’s strengths and pain points across routes and aircraft? How do patterns compare with similar airlines? Which issues represent quick wins versus longer-term initiatives, and how should resources be prioritized?
 
 ---
 ## 1. Overview 
@@ -17,7 +18,8 @@ The dashboard can be accessed [here](https://github.com/gwenniehub/frontier-revi
 
 ## 2. Architect Overview 
   <img width="827" height="288" alt="Screenshot 2025-10-04 at 12 35 45" src="https://github.com/user-attachments/assets/940c8d58-fd6f-41d1-87e2-f03110eb8113" />
-  
+
+
 For a comprehensive explanation of the ELT pipeline and its workflow, refer to this repo [skytrax_reviews](https://github.com/MarkPhamm/skytrax_reviews.git)
 
 ### **2.1. Extraction Layer**
@@ -128,9 +130,9 @@ CI/CD triggers on code pushes, PRs, weekly runs, and manual executions
 
 ## 5. Recommendations
 
-### **6.1 Seat Type** 
+### **5.1 Seat Type** 
 
-<img width="755" height="574" alt="Screenshot 2025-10-02 at 21 47 55" src="https://github.com/user-attachments/assets/5eec8f28-5221-4e3e-a61d-6f5d73957fdc" /> 
+<img width="1005" height="743" alt="Screenshot 2025-10-06 at 02 21 33" src="https://github.com/user-attachments/assets/c2389b5f-7dae-427e-82b6-20a7cea7503f" />
 
 - Prioritize service enhancements in Economy Class, especially around Entertainment and Seat Comfort, since this class represents the majority of reviews and customer base
 - Reevaluate investment in First Class, as demand is low compared to other segments, suggesting opportunities to optimize costs or reallocate resources
