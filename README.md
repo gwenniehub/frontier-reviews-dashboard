@@ -1,4 +1,11 @@
 # Frontier Airlines Analysis 
+![Hamburg_Finkenwerder_Airport_Frontier_Airlines_Airbus_A321-271NX_N611FR_(DSC02850)](https://github.com/user-attachments/assets/4641f8a6-35f4-466b-8a5d-f9640d573428)
+
+Frontier Airlines is a Denver-based ultra-low-cost carrier founded in 1994, serving more than 100 destinations across the United States and select international markets. Its model emphasizes affordable fares and point-to-point routes, making customer experience and operational reliability essential to differentiation.
+
+This project is a full, end-to-end analysis that gathers public customer reviews, standardizes the data, and presents the findings in an interactive report. The goal is to clarify how travelers experience Frontier and where improvements would create the most value. Key questions include: Where are Frontier’s strengths and pain points across routes and aircraft? How do patterns compare with similar airlines? Which issues represent quick wins versus longer-term initiatives, and how should resources be prioritized?
+
+
 ---
 ## 1. Overview 
 - Scope: 3,000 Frontier Airlines reviews from 2015 to 2025, sourced from [AirlineQuality.com](https://www.airlinequality.com/airline-reviews/%7Bairline%E2%80%91slug%7D/) (Skytrax), covering multiple airlines.
@@ -8,21 +15,12 @@ The dashboard can be accessed [here](https://github.com/gwenniehub/frontier-revi
 
 ---
 
-## 2. Team and Pipeline Overview
-This project was developed through close collaboration among a diverse data team, each member contributing a specialized role within the end-to-end analytics pipeline. The data engineering team designed and maintained the extraction layer, automating the collection of Skytrax reviews through web scraping pipelines and ensuring the data was properly staged in cloud storage. The data modeling team took responsibility for transforming raw data into structured, reliable models using dbt, implementing data quality checks and schema validation to support analysis at scale.
-
-The data analytics team built upon these models to conduct exploratory and statistical analysis, transforming complex datasets into actionable insights that reveal airline performance patterns and customer experience trends. Complementing this, the visualization and dashboard team focused on presenting these insights through an interactive front-end interface, enabling users to navigate key metrics and uncover service quality indicators.
-
-I contributed as part of the data analytics team, focusing on exploratory data analysis, querying transformed datasets, and generating insights that supported visualization and strategic recommendations. This collaborative workflow reflects a real-world data environment—where engineers, modelers, analysts, and visualization specialists work together seamlessly to deliver a cohesive, insight-driven analysis.
-
+## 2. Architect Overview 
+  <img width="827" height="288" alt="Screenshot 2025-10-04 at 12 35 45" src="https://github.com/user-attachments/assets/940c8d58-fd6f-41d1-87e2-f03110eb8113" />
+  
 For a comprehensive explanation of the ELT pipeline and its workflow, refer to this repo [skytrax_reviews](https://github.com/MarkPhamm/skytrax_reviews.git)
 
----
-
-## 3. Architect Overview 
-  <img width="827" height="288" alt="Screenshot 2025-10-04 at 12 35 45" src="https://github.com/user-attachments/assets/940c8d58-fd6f-41d1-87e2-f03110eb8113" />
-
-### **3.1. Extraction Layer**
+### **2.1. Extraction Layer**
 The extraction layer automates the process of collecting, cleaning, and staging Skytrax review data for analysis. It integrates multiple technologies to ensure data reliability, scalability, and security.  
 
 **Key Technologies:**  
@@ -41,7 +39,7 @@ The extraction layer automates the process of collecting, cleaning, and staging 
    `scrape_skytrax_data → clean_data → upload_cleaned_data_to_s3 → snowflake_copy_from_s3`.
 
 
-### 3.2. Data Cleaning Layer
+### 2.2. Data Cleaning Layer
 
 This layer refines raw review data to ensure consistency and readiness for transformation.  
 
@@ -57,7 +55,7 @@ This layer refines raw review data to ensure consistency and readiness for trans
 
 Cleaned outputs feed directly into Snowflake for transformation.
 
-### **3.3. Transformation Layer**
+### **2.3. Transformation Layer**
 
 This layer transforms cleaned data into structured models to support analytics and reporting.  
 
@@ -88,39 +86,39 @@ CI/CD triggers on code pushes, PRs, weekly runs, and manual executions
 
 ---
 
-## 4. Frontier Airlines Analysis & Visualization
-### **4.1. Stack**
+## 3. Frontier Airlines Analysis & Visualization
+### **3.1. Stack**
 - SQL (Snowflake): Data cleaning, preparation, and exploratory analysis
 - Python (Matplotlib, Seaborn): Visualizations (e.g., heatmaps) and exploratory analysis
 - Mode Analytics: SQL/Python integration and interactive dashboards
 - GitHub: Version control and documentation
 
-### **4.2. Workflow**
+### **3.2. Workflow**
 
-**4.2.1. Data Extraction (Snowflake)**
+**3.2.1. Data Extraction (Snowflake)**
 - Queried 121K+ Skytrax airline reviews stored in Snowflake
 - Filtered 3K+ Frontier Airlines records
 - Applied SQL joins, CTEs, and window functions to clean, normalize, and prepare structured datasets
   
-**4.2.2. Integration (Mode Analytics)**
+**3.2.2. Integration (Mode Analytics)**
 - Connected Snowflake directly to Mode Analytics for real-time querying
 - Combined SQL and Python within Mode for exploratory data analysis (EDA)
 
-**4.2.3. Exploratory Data Analysis (EDA)**
+**3.2.3. Exploratory Data Analysis (EDA)**
 - Used SQL to identify key service metrics (seat comfort, cabin staff, food, Wi-Fi)
 - Applied Python (Matplotlib, Seaborn) to generate trend visualizations, including heatmaps for satisfaction drivers
 
-**4.2.4. Visualization & Insights**
+**3.2.4. Visualization & Insights**
 - Built interactive dashboards in Mode Analytics to highlight customer pain points and route-based performance differences
 - Designed visuals for comparative analysis across service categories
 
-**4.2.5 Version Control & Documentation (GitHub)**
+**3.2.5 Version Control & Documentation (GitHub)**
 - Documented SQL scripts, Python notebooks, schema diagrams, and dashboard outputs in GitHub
 - Used GitHub for version control, collaboration, and project presentation
 
 ---
 
-## 5. Key Insights
+## 4. Key Insights
 - Frontier’s overall sentiment is relatively weak: the average rating is low, and the proportion of reviewers who would recommend the airline signals improvement regarding customer service.
 - In Economy, satisfaction is most strongly tied to Food & Beverages and Cabin Staff Service, passengers consistently cite those as differentiators.
 - In Non-Economy, Seat Comfort and Food & Beverages stand out: negative feedback in these areas correlates strongly with overall dissatisfaction.
@@ -128,7 +126,7 @@ CI/CD triggers on code pushes, PRs, weekly runs, and manual executions
 
 ---
 
-## 6. Recommendations
+## 5. Recommendations
 
 ### **6.1 Seat Type** 
 
@@ -138,14 +136,14 @@ CI/CD triggers on code pushes, PRs, weekly runs, and manual executions
 - Reevaluate investment in First Class, as demand is low compared to other segments, suggesting opportunities to optimize costs or reallocate resources
 
 
-### **6.2 Aircraft Model**
+### **5.2 Aircraft Model**
 
 <img width="989" height="745" alt="Screenshot 2025-10-03 at 15 31 16" src="https://github.com/user-attachments/assets/f84d53da-1acb-45ac-a9f1-2164068e8f83" />
 
 - Low sample size limits the reliability of review accuracy
 - Aircraft type shows minimal impact on customer satisfaction; focus should shift to other service dimensions
 
-### **6.3 Comparisons among ULCCs**
+### **5.3 Comparisons among ULCCs**
 
 <img width="984" height="388" alt="Screenshot 2025-10-03 at 15 36 14" src="https://github.com/user-attachments/assets/5233474c-90cb-4e4b-8574-b276550c6834" />
 
@@ -154,6 +152,8 @@ CI/CD triggers on code pushes, PRs, weekly runs, and manual executions
 
 --- 
 
-## 7. Reflections 
-
+## 6. Next Steps
+- **Predictive & Early-Warning** – Build models that forecast satisfaction/NPS by route and aircraft and flag routes likely to underperform.
+- **Text Intelligence** – Analyze review text to extract themes and sentiment (with multilingual support) to explain the “why” behind scores.
+- **Expand Data Sources** – Integrate DOT on-time and complaint data, fare and ancillary fee data, airport/aircraft metadata, weather, and holiday calendars to provide richer context.
 
