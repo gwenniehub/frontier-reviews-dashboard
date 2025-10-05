@@ -65,7 +65,7 @@ This layer transforms cleaned data into structured models to support analytics a
 
 **Data model**
 
-<img width="608" height="411" alt="Screenshot 2025-10-02 at 21 21 26" src="https://github.com/user-attachments/assets/2914db60-a8f4-467d-8270-9499244aaaf9" />
+<img width="984" height="745" alt="Screenshot 2025-10-02 at 21 21 26" src="https://github.com/user-attachments/assets/2914db60-a8f4-467d-8270-9499244aaaf9" />
     
 - Dimension Tables
 
@@ -132,7 +132,7 @@ CI/CD triggers on code pushes, PRs, weekly runs, and manual executions
 
 ### **5.1 Seat Type** 
 
-<img width="1005" height="743" alt="Screenshot 2025-10-06 at 02 21 33" src="https://github.com/user-attachments/assets/c2389b5f-7dae-427e-82b6-20a7cea7503f" />
+<img width="984" height="745" alt="Screenshot 2025-10-06 at 02 21 33" src="https://github.com/user-attachments/assets/c2389b5f-7dae-427e-82b6-20a7cea7503f" />
 
 - Prioritize service enhancements in Economy Class, especially around Entertainment and Seat Comfort, since this class represents the majority of reviews and customer base
 - Reevaluate investment in First Class, as demand is low compared to other segments, suggesting opportunities to optimize costs or reallocate resources
@@ -140,14 +140,14 @@ CI/CD triggers on code pushes, PRs, weekly runs, and manual executions
 
 ### **5.2 Aircraft Model**
 
-<img width="989" height="745" alt="Screenshot 2025-10-03 at 15 31 16" src="https://github.com/user-attachments/assets/f84d53da-1acb-45ac-a9f1-2164068e8f83" />
+<img width="984" height="745" alt="Screenshot 2025-10-03 at 15 31 16" src="https://github.com/user-attachments/assets/f84d53da-1acb-45ac-a9f1-2164068e8f83" />
 
 - Low sample size limits the reliability of review accuracy
 - Aircraft type shows minimal impact on customer satisfaction; focus should shift to other service dimensions
 
 ### **5.3 Comparisons among ULCCs**
 
-<img width="984" height="388" alt="Screenshot 2025-10-03 at 15 36 14" src="https://github.com/user-attachments/assets/5233474c-90cb-4e4b-8574-b276550c6834" />
+<img width="984" height="745" alt="Screenshot 2025-10-03 at 15 36 14" src="https://github.com/user-attachments/assets/5233474c-90cb-4e4b-8574-b276550c6834" />
 
 - Airlines in the same price range deliver higher customer satisfaction, giving them a competitive advantage, while many Frontier customers feel the value does not match the price paid
 - Frontier should prioritize improving key service metrics to enhance perceived value and close this competitive gap
