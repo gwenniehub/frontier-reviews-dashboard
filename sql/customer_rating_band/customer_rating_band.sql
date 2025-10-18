@@ -1,0 +1,12 @@
+SELECT
+  d.CAL_YEAR,
+  COUNT(*) AS total_reviews,
+  SUM(CASE WHEN recommended = TRUE THEN 1 ELSE 0 END) AS recommended_count,
+  ROUND(SUM(CASE WHEN recommended = TRUE THEN 1 ELSE 0 END) / COUNT(*), 2) AS recommendation_rate
+FROM SKYTRAX_REVIEWS_DB.MARTS.FCT_REVIEW_ENRICHED fct
+JOIN SKYTRAX_REVIEWS_DB.MARTS.DIM_DATE d
+  ON fct.DATE_SUBMITTED_ID = d.DATE_ID
+WHERE airline = 'Frontier Airlines'
+GROUP BY d.CAL_YEAR
+ORDER BY d.CAL_YEAR;
+
