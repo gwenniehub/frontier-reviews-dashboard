@@ -1,0 +1,12 @@
+SELECT
+  d.CAL_YEAR,
+  AIRLINE,
+  COUNT(*) AS total_reviews,
+  SUM(CASE WHEN recommended = TRUE THEN 1 ELSE 0 END) AS recommended_count,
+  ROUND(SUM(CASE WHEN recommended = TRUE THEN 1 ELSE 0 END) / COUNT(*), 2) AS recommendation_rate
+FROM SKYTRAX_REVIEWS_DB.MARTS.FCT_REVIEW_ENRICHED fct
+JOIN SKYTRAX_REVIEWS_DB.MARTS.DIM_DATE d
+  ON fct.DATE_SUBMITTED_ID = d.DATE_ID
+WHERE AIRLINE IN ('Frontier Airlines', 'Spirit Airlines', 'Allegiant Air')
+GROUP BY d.CAL_YEAR, AIRLINE
+ORDER BY d.CAL_YEAR;
